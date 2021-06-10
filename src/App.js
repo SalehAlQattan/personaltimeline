@@ -1,14 +1,23 @@
-import { AppWrapper } from './styles';
+import { RightWrapper } from './styles';
 import TimelineList from './components/TimelineList';
 import { GloblStyle } from './styles';
+import { ThemeProvider } from 'styled-components';
+
+const theme = {
+  primaryFontColor: '#1d3557',
+  secondaryFontColor: '#fff',
+  backgroundColor: '#F1FAEE',
+};
 
 function App() {
   return (
-    <AppWrapper>
-      <GloblStyle />
-      <h1>Hello From React App</h1>
-      <TimelineList />
-    </AppWrapper>
+    <ThemeProvider theme={theme}>
+      <RightWrapper>
+        <GloblStyle />
+        <h1>Welcome To My Timeline</h1>
+        <TimelineList />
+      </RightWrapper>
+    </ThemeProvider>
   );
 }
 
